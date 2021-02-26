@@ -30,4 +30,4 @@ client.on('message', (message) => {
   }
 })
 
-client.login('ODE0NzAwOTQ0NzEyMjY5ODU0.YDhrYQ.WAuCuoNOD7LaOb6Yca6RGjPo9Uw')
+client.login('your token')
