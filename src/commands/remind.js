@@ -35,7 +35,7 @@ module.exports = {
 
     const remindertime = new Discord.MessageEmbed()
       .setColor('#33F304')
-      .setDescription(`\**Your reminder will go off in ${time}**`)
+      .setDescription(`**Your reminder will go off in ${time}**`)
 
     message.channel.send(remindertime)
 
