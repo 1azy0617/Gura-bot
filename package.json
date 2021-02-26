@@ -4,7 +4,9 @@
   "description": "stream notification bot",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "lint" : "./node_modules/.bin/eslint --fix src"
   },
   "author": "1azy",
   "license": "ISC",
