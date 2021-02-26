@@ -38,4 +38,4 @@ client.once('ready',() => {
 
 });
 
- client.login('ODE0NzAwOTQ0NzEyMjY5ODU0.YDhrYQ.ojBmWl2adWVHJfCFH5lHxjpBOe8');
+ client.login('YOUR TOKEN');
