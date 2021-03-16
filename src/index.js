@@ -1,33 +1,30 @@
-const Discord = require('discord.js')
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const prefix = 'a!';
 
-const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] })
 
-const prefix = 'a!'
-
-const fs = require('fs')
-
-client.commands = new Discord.Collection()
-
-const commandFiles = fs.readdirSync('src/commands/').filter(file => file.endsWith('.js'))
-for (const file of commandFiles) {
-  const command = require(`./commands/${file}`)
-
-  client.commands.set(command.name, command)
-}
+client.commands = new Discord.Collection();
+client.events = new Discord.Collection();
 
 client.once('ready', () => {
-  console.log('Bot is online!')
-  client.user.setActivity('Gawr Gura', {
-    type: 'WATCHING'
+  client.user.setActivity("Gawr Gura", {
+      type: "WATCHING",
   })
+});
+
+
+
+
+
+['command_handler', 'event_handler'].forEach(handler => {
+    require(`./handlers/${handler}`)(client, Discord);
 })
 
-// updated ping
-client.on('message', (message) => {
-  const commands = message.content.split(' ')
-  if (commands[0] === '!ping') {
-    message.channel.send('pong')
-  }
-})
 
-client.login(process.env.TOKEN)
+//});
+
+
+
+
+
+ client.login('TOKEN');
